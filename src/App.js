@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import Todo from './components/Todo'
 
-function App() {
+function App() { 
+  /*This function will be used as a react component
+  A component must return something that can be rendered in the browser to be useful.
+  This is returned and inserted in the root div in index.js.*/
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>My Todos</h1>
+      <Todo text='Learn React'/>
+      <Todo text='Master React'/>
+      <Todo text='Eat mustard'/>
     </div>
   );
-}
+  //Note the 'className' above. In HTML it's actually class, but since class is a keyword in JS
+  //instead we use className in JSX. This is an example where html and JSX is not the same, but these cases are very rare.
+    //class actually worked for me though...
+} 
 
-export default App;
+export default App; // export -> makes it available outside of this file

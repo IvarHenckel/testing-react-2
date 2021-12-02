@@ -1,0 +1,87 @@
+React is a JavaScript library for user interfaces. (Se det som swing/JavaFX fast för web. Och i webprogrammering så har ju GUI en centralare roll.)
+(Angular is another contender basically same thing. It's built in typescript but can just as well be used in javascript as I understand things).
+(Angular is actually a framework while React is a library, it only takes care of rendering the state to the view. It is actually easier to learn.)
+
+Det finns flera tutorials om React + TypeScript. Men det är nog klokare att börja med tutorials som bara handlar om React.
+Dels verkar de flesta React + TypeScript förvänta sig att man redan kan React och bara vill applicera det på Typescript. 
+Sen är det lägre utbud så de har nog lägre kvalitet.
+
+Jag kan sedan gå till en React + TypeScript video eller bara konvertera mitt egna program till typescript kanske?. 
+
+
+Denna grabben har bra intro om hur man sätter upp:
+https://www.youtube.com/watch?v=hQAHSlTtcmY&t=204s
+
+Jag kör denna:
+https://www.youtube.com/watch?v=Ke90Tje7VS0
+Nää den var fett outdated så kör denna istället:
+https://www.youtube.com/watch?v=Dorf8i6lCuk
+
+
+With React we divide our program into reusable components. Every React application has at least one root component called "App".
+
+A react component is typically implemented with a JS class
+
+class AComponent {
+    state = {};
+    render() {
+        // Output of this is a React element which is simply a plain JS object used to describe how the page should look
+    };
+}
+
+A React Element is a virtual DOM Element. It is cheaper to create and modify.
+With React we no longer have to write code that directly manages the DOM elements.
+In Tools & Infra we used DOM elements directly with JQueries I think.
+
+React is called react because it automatically reacts and updates the DOM elements when our components change.
+
+What is a DOM element?
+Document object model. The DOM is the way Javascript sees its containing pages' data. 
+It is an object that includes how the HTML/XHTML/XML is formatted, as well as the browser state.
+A DOM element is something like a DIV, HTML, BODY element on a page.
+
+React is only about client side JS.
+
+It's a sort of higher level syntax to generate HTML. Framförallt om man ska ha en hemsida som ska kunna ändras när man navigerar på sidan.
+Det funkar med ren HTML + JS men i react får man mycket på köpet.
+
+The reason why need to download and set up folders etc when we create a react app is that react code doesn't work directly in the browser.
+In particular we use HTML code inside JS. This is converted to real JS before we use it in the browser.
+We also get other things like a development server and so on.
+
+//Set up
+ npm i -g create-react-app // installerar något
+ create-react-app <appnamn>     // kommer sedan att faktiskt att först installera react och alla third party libraries som behövs och sedan kommer även mappar osv skapas
+ cd <app-namn>
+ npm start // Kör ett skript som startat applikationen och håller dessutom allt uppdaterat när man savear
+
+// Man måste ju inte köra create_react_app utan det finns andra sätt
+//Obs om man får ett färdigt uppsatt kodprojekt kör man npm install för att hämta alla dependencies.
+OBS alla dependencies finns i package.json and we can import them into our JS-files with import <..>
+
+ Jag tog sedan bort flera filer som inte behövs för vårt simpla program.
+    Tog bort allt utom App.js, index.css, index.js.
+    
+//Maps:
+//We never have to touch node_modules so don't worry about it
+//Public contains html files, images etc (and manifest.json which contains a bunch of meta data attributes.)
+//The only HTML file used us index.html. React basically copyes the rendered html into the root div in index.html.
+
+npm install <package name> is also used to install additional libraries.
+s.a. npm install react-router-dom //it then gets added to package.json dependencies
+
+react-router-dom allows us to add router functionality. -> Change what is visible on screen without having to reload page.
+
+Note that React is used for client side user interface. To save data on a website i.e a dynamic website 
+we usually want a backend server with a REST-API. Then the server not only sends data with GET
+but it can also recieve data with a POST.
+You don't connect a front end application like React to a database itself.
+Mainly because security.
+All the code written in react is visible to the user in the browsers web development tools.
+The same would go for database credentials.
+Therefore we instead simply want to send requests to a backend server.
+This server can then handle the request for us.
+
+Firebase is a database service which contains an API that we can send requests to.
+
+Note: React används egentligen inte endast för websidor. Man kan använda det i appar också.
